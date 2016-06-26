@@ -1,0 +1,26 @@
+---
+
+- name: update repositories / upgrade packages
+  apt: update_cache=yes upgrade=dist
+
+- name: Install packages
+  apt: name={{ item }} state=latest
+  with_items:
+    - bash-completion
+    - git
+    - vim-nox
+    - htop
+    - atop
+    - tmux
+    - sysstat
+    - nmap
+    - whois
+    - curl
+    - tree
+    - iotop
+    - lm-sensors
+    - smartmontools
+    - python-software-properties
+    - python-flake8
+
+

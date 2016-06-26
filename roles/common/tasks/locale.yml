@@ -1,0 +1,5 @@
+---
+
+- name: add lv_LV.UTF-8 locale
+  locale_gen: name=lv_LV.UTF-8
+              state=present

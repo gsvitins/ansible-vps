@@ -1,0 +1,10 @@
+---
+# used to add new users and set up ssh access to these users
+sys_users:
+  - name: bxz
+    key: "{{ lookup('file', 'public_keys/bxz.pub') }}"
+
+ssh_permit_pwd_auth: no
+ssh_port: 22
+hostname: bxz.id.lv
+timezone: Europe/Riga

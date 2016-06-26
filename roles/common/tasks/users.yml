@@ -1,0 +1,8 @@
+---
+- name: add users and homedirs
+  user: name={{ item.name }} createhome=yes groups=sudo append=yes shell=/bin/bash
+  with_items: "{{ sys_users }}"
+
+- name: add user public keys to .ssh/authorized_keys
+  authorized_key: user={{ item.name }} key={{ item.key }}
+  with_items: "{{ sys_users}}"

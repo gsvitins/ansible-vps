@@ -1,0 +1,19 @@
+---
+- name: Remove old dotfiles
+  become: yes
+  become_user: "{{ item.name }}"
+  file: path=~/git/dotfiles/ state=absent
+  with_items: "{{ sys_users }}"
+
+- name: Clone dotfiles git repo
+  become: yes
+  become_user: "{{ item.name }}"
+  git: repo=https://github.com/gsvitins/dotfiles.git dest=~/git/dotfiles
+  with_items: "{{ sys_users }}"
+
+- name: Execute dotfiles install script
+  become: yes
+  become_user: "{{ item.name }}"
+  shell: chdir=~/git/dotfiles ./install.sh
+  with_items: "{{ sys_users }}"
+

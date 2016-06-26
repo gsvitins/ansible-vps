@@ -1,0 +1,10 @@
+---
+- hosts: bxz.id.lv
+  remote_user: root
+  become: yes
+  become_user: root
+  roles:
+    - common
+    #- fail2ban
+    #- docker
+

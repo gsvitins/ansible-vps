@@ -1,0 +1,10 @@
+---
+- include: users.yml
+- include: packages.yml
+- include: dotfiles.yml
+- include: locale.yml
+- include: motd.yml
+- include: timezone.yml
+- include: sshd.yml
+- include: hostname.yml
+- include: sudo.yml

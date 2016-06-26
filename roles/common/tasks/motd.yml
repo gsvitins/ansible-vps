@@ -1,0 +1,19 @@
+---
+
+- name: disable default MOTD templates by removing execute permissions
+  file: path=/etc/update-motd.d/{{ item }}
+        owner=root
+        group=root
+        mode=0644
+  with_items:
+    - 00-header
+    - 10-help-text
+
+- name: change MOTD with our own
+  template: src=motd.j2
+            dest=/etc/update-motd.d/01-motd-ansible
+            owner=root
+            group=root
+            mode=0755
+  notify:
+    - update motd
