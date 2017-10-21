@@ -4,7 +4,8 @@
   become: yes
   become_user: root
   roles:
-    - common
+    #- common
     #- fail2ban
     #- docker
+    - openvpn-server
 

@@ -7,3 +7,8 @@
 
 - name: update motd
   command: run-parts /etc/update-motd.d/
+
+- name: restart sshd
+  service:
+    name: ssh
+    state: restarted
