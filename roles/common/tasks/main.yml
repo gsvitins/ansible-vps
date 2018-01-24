@@ -1,10 +1,10 @@
 ---
-- include: users.yml
-- include: packages.yml
-- include: dotfiles.yml
-- include: locale.yml
-- include: motd.yml
-- include: timezone.yml
-- include: sshd.yml
-- include: hostname.yml
-- include: sudo.yml
+import_tasks: users.yml
+import_tasks: packages.yml
+import_tasks: dotfiles.yml
+import_tasks: locale.yml
+import_tasks: motd.yml
+import_tasks: timezone.yml
+import_tasks: sshd.yml
+import_tasks: hostname.yml
+import_tasks: sudo.yml
